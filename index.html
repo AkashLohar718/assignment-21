@@ -2,9 +2,70 @@
 <html>
 <head>    
     <title>Bulb Toggler</title>
+    <style>
+        #main-body{
+            background-color: rgb(92, 92, 90);
+        }
+
+        #container{
+            display: block;
+            height: 300px;
+            width: 300px;
+            background-color: rgb(163, 163, 163);
+            padding: 3px;
+            margin: 20px auto;
+            border-radius: 20px;
+        }
+        
+        #off-img{
+            display: block;
+            height: 200px;
+            width: 200px;
+            margin: 20px auto;
+        }
+
+        .btn{
+            padding: 10px 15px;
+            font-size: 16px;
+            border-radius: 30px;
+            background-color: #ff3333;
+            border: none;
+            min-width: 100px;
+            margin: 6px 24px; 
+            font-weight: bold;    
+        }
+        .btn-on{
+            background-color:#00b33c;
+        }
+
+    </style>
 </head>
-<body>
-    
+<body id="main-body">
+    <h1 style="text-align: center;" id="heading">Bulb Toggler</h1>
+    <div id="container">
+        <img src="bulb-off.png" alt="bulb-off" 
+        id="off-img">
+        <button class="btn" onclick="bulbOff()">OFF</button>
+        <button class="btn btn-on" onclick="bulbOn()">ON</button>
+    </div>
+    <script>
+        const bulb=document.getElementById("off-img");
+        const bodyElement=document.getElementById("main-body");
+        const containerElement=document.getElementById("container");
+        const headingElement=document.getElementById("heading");
+        function bulbOn(){
+            bodyElement.style.backgroundColor="#ffff99";
+            bulb.src="bulb-on.png";
+            containerElement.style.backgroundColor="#ffeca0";
+            headingElement.style.color="black";                   
+        }
+        function bulbOff(){
+            bulb.src="bulb-off.png";
+            bodyElement.style.backgroundColor="rgb(92, 92, 90)";
+            containerElement.style.backgroundColor="rgb(163, 163, 163)";
+            headingElement.style.color="white";
+        }
+    </script>
     
 </body>
 </html>
